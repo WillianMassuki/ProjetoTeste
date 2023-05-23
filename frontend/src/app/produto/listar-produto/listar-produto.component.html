@@ -1,0 +1,22 @@
+<p-table [value]="produtos" styleClass="p-datatable-striped">
+    <ng-template pTemplate="header">
+        <tr>
+          <th>codigoBarras</th>
+          <th>quantidadeMinima</th>
+          <th>nome</th>
+          <th>saldoInicial</th>
+          <th>EDITAR</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-produto>
+        <tr >
+          <td>{{produto.codigoBarras}}</td>
+          <td>{{produto.quantidadeMinima}}</td>
+          <td>{{produto.nome}}</td>
+          <td>{{produto.nome}}</td>
+          <td>{{produto.saldoInicial}}</td>
+          <td><button pButton pRipple  class="p-button-rounded p-button-success p-mr-2" routerLink="/editarEstoque/{{produto.Codigo}}">EDITAR</button>
+        </td>
+        </tr>
+    </ng-template>
+  </p-table>

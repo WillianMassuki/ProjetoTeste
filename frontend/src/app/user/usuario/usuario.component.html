@@ -1,0 +1,53 @@
+<p-card>
+  <p-header>
+    <h3 class="text-center font-weight-light my-4">
+      {{ cadastrando ? 'Cadastro de Novo Usuário' : 'Entrar' }}
+  </h3>
+  </p-header>
+  <div class="alert alert-success" *ngIf="mensagemSucesso">
+    {{ mensagemSucesso }}
+</div>
+
+<div class="alert alert-danger" *ngFor="let erro of errors">
+{{ erro }}
+</div>
+
+<form #loginForm="ngForm" (submit)="onSubmit();">
+    <div class="form-group">
+        <label class="small mb-1">Login : </label>
+        <input type="text" pInputText name="username"
+        [(ngModel)]="username" autocomplete="off" placeholder="Digite seu login"/>
+    </div>
+
+    <div class="form-group">
+        <label class="small mb-1">Senha : </label>
+
+            <input type="text" pInputText name="password"
+            [(ngModel)]="password" placeholder="Digite sua Senha"/>
+    </div>
+
+    <div class="form-group align-items-center justify-content-between mt-4 mb-0">
+        <button pButton  type="submit" class="p-button-sm" *ngIf="!cadastrando">
+            Enviar
+        </button>
+
+        <button pButton type="button" class="p-button"
+                (click)="cadastrar()"
+                *ngIf="cadastrando">
+            Cadastrar
+        </button>
+
+        <button pButton type="button" (click)="cancelaCadastro()"
+        class="p-button-danger" *ngIf="cadastrando">
+            Cancelar
+        </button>
+    </div>
+</form>
+  <p-footer>
+    <div class="small">
+      <button type="button" href="#" (click)="preparaCadastrar($event) "> 
+        Não possui Usuário? Cadastre-se!
+      </button>
+  </div>
+  </p-footer>
+</p-card>

@@ -1,0 +1,33 @@
+<p-card>
+    <form>
+      <div class="ui-g">
+        <div class="ui-g-12 ui-fluid">
+          <h2>Cadastro</h2>
+        </div>
+    
+        <div class="ui-g-2 ui-fluid">
+          <label for="descricao">produto</label>
+          <input pInputText id="codigoBarras" name="codigoBarras" [(ngModel)]="produto.codigoBarras"/>
+        </div>
+    
+        <div class="ui-g-10 ui-fluid">
+          <label>quantidade</label>
+          <input pInputText name="quantidadeMinima" [(ngModel)]="produto.quantidadeMinima"/>
+        </div>
+    
+        <div class="ui-g-4 ui-fluid">
+          <label>Data</label>
+          <input pInputText name="nome" [(ngModel)]="produto.nome"/>
+        </div>
+    
+        <div class="ui-g-4 ui-fluid">
+          <label>motivo</label>
+          <input pInputText name="saldoInicial" [(ngModel)]="produto.saldoInicial"/>
+        </div>
+       
+      </div>
+  
+      <button pButton type="submit" (click)="salvar(produto)">SALVAR</button>
+  
+    </form>
+</p-card>

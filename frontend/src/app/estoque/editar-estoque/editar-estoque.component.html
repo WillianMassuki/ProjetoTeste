@@ -1,0 +1,39 @@
+<p-card>
+    <form>
+      <div class="ui-g">
+        <div class="ui-g-12 ui-fluid">
+          <h2>Cadastro</h2>
+        </div>
+    
+        <div class="ui-g-2 ui-fluid">
+          <label for="descricao">produto</label>
+          <input pInputText id="produto" name="produto" [(ngModel)]="estoque.produto"/>
+        </div>
+    
+        <div class="ui-g-10 ui-fluid">
+          <label>quantidade</label>
+          <input pInputText name="quantidade" [(ngModel)]="estoque.quantidade"/>
+        </div>
+    
+        <div class="ui-g-4 ui-fluid">
+          <label>Data</label>
+          <input pInputText name="data" [(ngModel)]="estoque.data"/>
+        </div>
+    
+        <div class="ui-g-4 ui-fluid">
+          <label>motivo</label>
+          <input pInputText name="motivo" [(ngModel)]="estoque.motivo"/>
+        </div>
+
+        <div class="ui-g-4 ui-fluid">
+            <label>documento</label>
+            <input pInputText name="documento" [(ngModel)]="estoque.documento"/>
+          </div>
+    
+       
+      </div>
+  
+      <button pButton type="submit" (click)="salvar(estoque)">SALVAR</button>
+  
+    </form>
+</p-card>
